@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Libra</string>
+    <string name="dummy_content"></string>
+    <string name="load">Loading</string>
+
+    <!-- Login Activity-->
+    <string name="user_email">Username</string>
+    <string name="auth_password">Password</string>
+    <string name="login">Login</string>
+    <string name="action_sign_in_short">Sign In</string>
+</resources>

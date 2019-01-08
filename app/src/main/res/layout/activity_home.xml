@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="show" type="String"/>
+        <import type="android.view.View"/>
+    </data>
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeActivity"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/bar"
+        layout="@layout/header"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/iron"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Number Of Passengers"
+                        android:inputType="number"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/black"
+                        android:scrollHorizontally="false"
+                        android:scrollbars="vertical"
+                        android:id="@+id/passengers"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:textColorHint="@color/iron"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Total Amount Paid"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:scrollHorizontally="false"
+                        android:scrollbars="vertical"
+                        android:id="@+id/payment"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Date"
+                            android:inputType="date"
+                            android:textColor="@color/black"
+                            android:scrollHorizontally="false"
+                            android:scrollbars="vertical"
+                            android:id="@+id/date"
+                            android:focusable="false"
+                            android:onClick="onDateClick"/>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        >
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Dispatch"
+                            android:inputType="numberDecimal"
+                            android:ems="10"
+                            android:id="@+id/dispatch"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        >
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Transload"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/transload"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        >
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Miscellaneous"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/miscellaneous"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/layout_padding">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Loading"
+                        android:textColor="@color/iron"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:textSize="20sp"/>
+
+                    <RadioGroup
+                        android:id="@+id/signed_up_opt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/signMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="True" />
+
+                        <RadioButton
+                            android:id="@+id/signFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="False" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:visibility='@{show.equals("yes") ? View.VISIBLE : View.GONE }'>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        >
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Number Loaded"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:id="@+id/loading"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        >
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:hint="Amount From Loading"
+                            android:inputType="numberDecimal"
+                            android:ems="10"
+                            android:id="@+id/loaded_amt"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/black" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="2000"
+                    android:maxLines="20"
+                    android:background="@drawable/edit_text_style"
+                    android:lines="8"
+                    android:gravity="start|top"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/nav_header_vertical_spacing"
+                    android:textColorHint="@color/iron"
+                    android:hint="Comment"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="@dimen/layout_padding_more"
+                    android:visibility='@{show.equals("yes") ? View.VISIBLE : View.GONE }'/>
+
+
+
+                <Button
+                    android:id="@+id/enter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="Enter"
+                    android:textAllCaps="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:padding="@dimen/layout_padding"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="onClick"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+</layout>
